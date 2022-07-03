@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-container">
+    <div class="layout-container">
     <el-container class="container">
       <el-aside width="200px">
         <NavMenu></NavMenu>
@@ -37,6 +37,9 @@ export default {
   height: 100%;
   .container {
     height: 100%;
+  }
+  .el-header {
+    box-shadow: 0 1px 0 0 #EFEFEF;
   }
 }
 </style>

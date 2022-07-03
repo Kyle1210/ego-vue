@@ -239,8 +239,6 @@ export default {
   },
   methods: {
     handleClick (tab, event) {
-      console.log(tab)
-      console.log(this.$refs)
       const visitBar = this.$echarts.init(this.$refs.visitBar)
       visitBar.setOption({
         title: {

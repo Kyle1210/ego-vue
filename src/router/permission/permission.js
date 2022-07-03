@@ -7,7 +7,7 @@ router.beforeEach((to, from, next) => {
   // 通过本地是否存储了token来判断用户是否已经登陆
   if (!getToken()) { // 用户未登录
     // 判断用户访问的是否为登陆页面
-    if (to.name === 'Login') {
+    if (to.path === '/login') {
       // 直接放行
       next()
     } else {

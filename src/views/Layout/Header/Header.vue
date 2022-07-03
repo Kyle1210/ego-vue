@@ -27,9 +27,10 @@ export default {
 
   methods: {
     logout () {
-      console.log(1)
       // 派发actions
-      this.$store.dispatch('user/logout')
+      this.$store.dispatch('user/logout').then(() => {
+        location.reload()
+      })
     }
   }
 }
@@ -40,7 +41,6 @@ export default {
   display: flex;
   justify-content: space-between;
   height: 100%;
-  border-bottom: 1px solid #B7B4B6;
   .breadcrumb {
       height: 100%;
   }

@@ -19,6 +19,7 @@ const actions = {
       // 路由跳转
       router.push('/')
     } else {
+      this.$message.error('用户名或密码错误..')
     }
   },
 
@@ -48,16 +49,14 @@ const actions = {
 
   // 退出登陆
   logout ({ commit }) {
-    // 重置菜单
-    commit('DEFAULT_MENU')
     // 移除本地化的token
     removeToken()
     // 清除vuex里的数据
     commit('SET_DEFAULT_VUEX')
+    // // 强制刷新，用于解决切换用户后菜单遗留问题
+    // window.location.reload(true)
     // 跳转到登陆页
-    router.push('/login')
-    // 强制刷新，用于解决切换用户后菜单遗留问题
-    window.location.reload(true)
+    router.replace('/login')
   }
 }
 
